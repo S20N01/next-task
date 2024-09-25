@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OutLine Forum</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- DaisyUi and Tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-mulish">
+    <!-- Header -->
+    <header class="px-20 py-10">
+        <!-- Nav Bar -->
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <div class="">
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><a><img class="" src="images/home-png.png" alt="" title="Home">Home</a></li>
+                                <li><a><img class="" src="images/edit.svg" alt="" title="Tooltip">Tooltip</a></li>
+                                <li><a><img class="" src="images/add.svg" alt="" title="User"></a>User</li>
+                                <li><a><img class="" src="images/report.svg" alt="" title="Report">Report</a></li>
+                                <li><a class="btn bg-[#797DFC] rounded-3xl text-white px-8">Sign In</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a class="btn btn-ghost text-3xl font-extrabold">OutLine</a>
+                </div>
+                <div class="navbar-end hidden lg:flex">
+                    <ul class="flex gap-6 mx-8 items-center">
+                        <li class="bg-slate-100 rounded-3xl p-3 btn"><a><img class="w-6" src="images/home.svg" alt=""
+                                    title="Home"></a></li>
+                        <li class="bg-slate-100 rounded-3xl p-3 btn"><a><img class="w-6" src="images/edit.svg" alt=""
+                                    title="Tooltip"></a></li>
+                        <li class="bg-slate-100 rounded-3xl p-3 btn"><a><img class="w-6" src="images/add.svg" alt=""
+                                    title="User"></a></li>
+                        <li class="bg-slate-100 rounded-3xl p-3 btn"><a><img class="w-6" src="images/report.svg" alt=""
+                                    title="Report"></a></li>
+                    </ul>
+                </div>
+                <a class="btn bg-[#797DFC] rounded-3xl text-white px-8">Sign In</a>
+            </div>
+        </nav>
+
+        <!-- banner section -->
+         <section class="my-10">
+            <div class="banner-container flex flex-col lg:flex-row lg:justify-between lg:items-center bg-[#12132D] text-white bg-[url('/images/bgbanner.png')] bg-no-repeat bg-cover rounded-3xl px-3 py-8 lg:p-28 space-y-10">
+                
+                <div class="space-y-6">
+
+                    <h1
+                        class="text-2xl lg:text-6xl font-[1000] leading-tight lg:leading-tight text-center lg:text-left">
+                        Welcome to the <br><span class="retro-gradient">OutLine</span> Forum</h1>
+                    <p class="text-sm lg:text-lg text-center lg:text-left">Share your favorite opinion and with and wp
+                        <br> forum coffee mug
+                    </p>
+                    <div class="bg-white rounded-full flex justify-between">
+                        <input id="search-text" type="text" placeholder="Type here"
+                            class="input w-full max-w-xs rounded-l-full text-black" />
+                        <a onclick="handleSearch()"
+                            class="btn bg-[#797DFC] rounded-3xl text-white font-bold px-8">Search</a>
+                    </div>
+
+                </div>
+
+                <!-- register user & user forum part -->
+                <div class="bg-white text-black p-10 w-80 text-xl rounded-3xl space-y-5 mx-auto lg:mx-0">
+
+                    <div class="flex justify-between font-bold">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between font-bold">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex justify-between font-bold">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between font-bold">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+
+                </div>
+            </div>
+         </section>
+    </header>
+
+    <!-- Main -->
+    <main class="px-20 py-10">
+        <!-- Main sect. -->
+        <section>
+
+            <div class="text-center lg:space-y-5 my-5">
+                <h2 class="text-4xl font-[1000]">Let's Discuss</h2>
+                <p class="bg-white rounded-full">Yes, you can run unit tests and view the results directly within the
+                    app. The <br>integrated testing features allow for a streamlined .</p>
+            </div>
+
+        </section>
+
+        <section>
+
+            <div id="toggle-loading" class="text-center mt-64 hidden">
+                <span class="loading loading-spinner loading-lg"></span>
+
+            </div>
+
+            <div id="post-bookmark-section" class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-10 m-2">
+
+
+                <!--Dynamic Post Section -->
+                <div id="post-container" class="lg:col-span-2 space-y-4">
+
+
+
+                </div>
+
+                <!-- Bookmark Section -->
+                <div>
+
+                    <div class="bg-gray-100 rounded-lg lg:rounded-3xl p-2 lg:p-10">
+
+                        <div class="flex justify-between">
+                            <h3 class="text-lg lg:text-2xl font-bold">Title</h3>
+                            <p>Mark as read (<span id="bookmark-count">0</span>)</p>
+                        </div>
+
+                        <div id="bookmark-container" class="mt-6">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <!-- Forum Section Started -->
+
+        <section class="my-32">
+
+            <div
+                class="banner-container flex flex-col lg:flex-row lg:justify-between lg:items-center bg-[#12132D] text-white bg-no-repeat bg-cover rounded-3xl px-3 py-8 lg:px-28 space-y-10">
+
+                <div class="space-y-6">
+
+                    <h1
+                        class="text-2xl lg:text-4xl font-[1000] leading-tight lg:leading-tight text-center lg:text-left">
+                        Join Our Forum</h1>
+                    <p class="text-sm lg:text-lg text-center lg:text-left">
+                        Share your favorite opinion and win and wp forum coffee mug! Yes, you can run <br> unit tests
+                        and view the results directly within the app.
+                    </p>
+                    <div class="text-start">
+
+                        <a class="btn bg-[#797DFC] rounded-3xl text-white font-bold px-8 border-0 text-lg">Registered
+                            Now</a>
+
+                    </div>
+
+                </div>
+                <div class="">
+
+                    <img class="" src="images/joinforum.png" alt="">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- latest post -->
+        <section class="mb-14">
+
+            <div class="text-center lg:space-y-5 my-5">
+                <h2 class="text-4xl font-[1000]">Latest Posts</h2>
+                <p class="bg-white rounded-full">Yes, you can run unit tests and view the results directly within the
+                    app. The <br>integrated testing features allow for a streamlined .</p>
+            </div>
+
+        </section>
+
+        <!-- Dynamic Latest Post -->
+        <section>
+
+            <div id="card-container" class="grid grid-cols-1 lg:grid-cols-3 w-auto">
+
+
+            </div>
+
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+        <footer class="bg-[#e1e1e6] mt-10">
+
+            <section class="flex justify-center items-center py-16">
+
+                <div>
+                    <div class="text-4xl font-extrabold text-center mb-8">
+                        OutLine
+                </div>
+    
+                <div class="text-center space-y-10">
+    
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque repellat repellendus quis perferendis aspernatur corrupti vel, <br> repudiandae iste quod assumenda sint, in voluptas doloremque molestiae eligendi quas iusto a corporis!</p>
+    
+                    <img class="mx-auto" src="images/Social.svg" alt="">
+    
+                    <p class="">788 B.C. All Rights Reserved.</p>
+    
+                </div>
+    
+    
+            </section>
+    
+        </footer>
+    <script src="js/outline.js"></script>
+</body>
+
+</html>
